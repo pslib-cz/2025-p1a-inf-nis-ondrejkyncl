@@ -1,2 +1,2 @@
-# 2025-p1a-inf-nis-ondrejkyncl
-2025-p1a-inf-nis-ondrejkyncl created by GitHub Classroom
+# Prumyslovka Liberec - Školní liga stolního fotbálku
+-aplikace, kde se budou zobrazovat zápasy mezi třídami naší školy.
