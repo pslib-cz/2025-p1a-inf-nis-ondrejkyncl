@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="100%" height="100%">
+    <defs>
+        <marker id="agg" viewBox="0 0 12 12" refX="0" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 6 L 6 1 L 12 6 L 6 11 Z" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+        </marker>
+    </defs>
+    <style>
+        .title { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #0f172a; text-anchor: middle; }
+        .cls { fill: #f8fafc; stroke: #334155; stroke-width: 1.5; }
+        .hdr { font-family: 'Arial', sans-serif; font-size: 13px; font-weight: bold; fill: #0f172a; text-anchor: middle; }
+        .attr { font-family: 'Arial', sans-serif; font-size: 12px; fill: #1e293b; }
+    </style>
+    <text x="450" y="30" class="title">4. DIAGRAM DAT A VZTAHŮ (CLASS DIAGRAM)</text>
+    
+    <g transform="translate(100, 100)">
+        <rect x="0" y="0" width="180" height="80" class="cls"/>
+        <line x1="0" y1="30" x2="180" y2="30" stroke="#334155" stroke-width="1.5"/>
+        <text x="90" y="20" class="hdr">Třída</text>
+        <text x="10" y="48" class="attr">- tridaID: int [PK]</text>
+        <text x="10" y="68" class="attr">- jmeno: string</text>
+    </g>
+    
+    <g transform="translate(400, 100)">
+        <rect x="0" y="0" width="200" height="120" class="cls"/>
+        <line x1="0" y1="30" x2="200" y2="30" stroke="#334155" stroke-width="1.5"/>
+        <text x="100" y="20" class="hdr">Uživatel</text>
+        <text x="10" y="48" class="attr">- userID: int [PK]</text>
+        <text x="10" y="68" class="attr">- email: string</text>
+        <text x="10" y="88" class="attr">- tridaID: int [FK]</text>
+        <text x="10" y="108" class="attr">- role: Enum</text>
+    </g>
+    
+    <g transform="translate(400, 350)">
+        <rect x="0" y="0" width="200" height="140" class="cls"/>
+        <line x1="0" y1="30" x2="200" y2="30" stroke="#334155" stroke-width="1.5"/>
+        <text x="100" y="20" class="hdr">Zápas</text>
+        <text x="10" y="48" class="attr">- zapasID: int [PK]</text>
+        <text x="10" y="68" class="attr">- domaciTymID: int</text>
+        <text x="10" y="88" class="attr">- hosteTymID: int</text>
+        <text x="10" y="108" class="attr">- skore: string</text>
+        <text x="10" y="128" class="attr">- potvrzeno: bool</text>
+    </g>
+    
+    <line x1="280" y1="140" x2="400" y2="140" stroke="#334155" stroke-width="1.5"/>
+    <text x="290" y="130" class="attr">1</text>
+    <text x="385" y="130" class="attr">*</text>
+    <line x1="500" y1="220" x2="500" y2="350" stroke="#334155" stroke-width="1.5" marker-start="url(#agg)"/>
+    <text x="510" y="240" class="attr">2</text>
+    <text x="510" y="340" class="attr">1..*</text>
+</svg>
