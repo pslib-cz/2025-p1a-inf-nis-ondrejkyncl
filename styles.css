@@ -1,0 +1,330 @@
+/* --- Základní proměnné --- */
+:root {
+    --primary-color: #4154fa; /* Originální modrá z loga PSLIB */
+    --text-color: #333333;
+    --text-muted: #666666;
+    --bg-color: #f4f6f9;
+    --white: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Reset a globální styly --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Hlavička a Navigace --- */
+.main-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo svg {
+    height: 40px;
+    width: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Sekce (hlavní vizuál) --- */
+.hero {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 80px 0;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-placeholder {
+    width: 100%;
+    max-width: 500px;
+    height: 320px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Obsahové sekce --- */
+.content-section {
+    background-color: var(--white);
+    margin-top: 40px;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.content-section h3 {
+    color: var(--text-color);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.feature-list {
+    list-style-type: none;
+}
+
+.feature-list li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.feature-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+/* --- Rozložení na sloupce --- */
+.flex-row {
+    display: flex;
+    gap: 40px;
+}
+
+.flex-row .column {
+    flex: 1;
+}
+
+/* --- Patička --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 0.9rem;
+}
+
+/* --- UML Diagramy --- */
+.uml-grid {
+    display: grid;
+    /* Automaticky vytvoří sloupce, které mají minimálně 45% šířky kontejneru */
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.uml-card {
+    background-color: var(--bg-color);
+    border: 1px solid #e0e4e8;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uml-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.uml-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.uml-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+    /* Jemně přerušovaný okraj, aby to vypadalo jako místo pro vložení */
+    border: 2px dashed #ccc;
+    border-radius: calc(var(--border-radius) - 4px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.uml-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    /* contain zajistí, že se diagram zobrazí celý a neořízne se */
+    object-fit: contain; 
+}
+
+/* --- Vizuál pro klikací diagramy --- */
+.clickable-diagram {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Když na diagram najedeš myší, lehce se zvětší, aby uživatel věděl, že jde kliknout */
+.clickable-diagram:hover {
+    transform: scale(1.03);
+}
+
+/* --- Lightbox (Vyskakovací okno) --- */
+.lightbox {
+    display: none; /* V základu je schovaný */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Tmavé průhledné pozadí */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Třída, kterou přidává JS pro zobrazení */
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh; /* Maximální výška je 80% okna, aby se vešel křížek i text */
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    cursor: zoom-in; /* Změní kurzor myši, aby naznačil další akci */
+    background-color: white; /* Pro případ, že by tvé diagramy měly průhledné pozadí */
+}
+
+/* Pokud je obrázek ve fullscreenu, zrušíme mu zakulacení rohů */
+.lightbox-content:fullscreen {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    cursor: zoom-out;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--primary-color);
+}
+
+.lightbox-caption {
+    color: #cccccc;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* --- Responzivní design pro mobily --- */
+@media (max-width: 768px) {
+    .hero-container, .flex-row {
+        flex-direction: column;
+    }
+    
+    .hero-image {
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .uml-grid {
+        grid-template-columns: 1fr;
+    }
+}

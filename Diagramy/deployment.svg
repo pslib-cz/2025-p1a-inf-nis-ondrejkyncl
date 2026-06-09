@@ -1,38 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="100%" height="100%">
     <style>
-        .title { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #0f172a; text-anchor: middle; }
-        .box { fill: #fafafa; stroke: #334155; stroke-width: 1.5; }
-        .hdr { fill: #e2e8f0; stroke: #334155; stroke-width: 1.5; }
-        .node { font-family: 'Arial', sans-serif; font-size: 12px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
-        .desc { font-family: 'Arial', sans-serif; font-size: 11px; fill: #1e293b; text-anchor: middle; }
+        .tit { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+        .bx { fill: #fafafa; stroke: #334155; stroke-width: 1.5; }
+        .hd { fill: #e2e8f0; stroke: #334155; stroke-width: 1.5; }
+        .n { font-family: 'Arial', sans-serif; font-size: 13px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+        .d { font-family: 'Arial', sans-serif; font-size: 11px; fill: #1e293b; text-anchor: middle; }
     </style>
+    <text x="500" y="30" class="tit">3. DETAILNÍ DEPLOYMENT DIAGRAM</text>
     
-    <text x="450" y="30" class="title">3. DIAGRAM TECHNOLOGIE A NASAZENÍ</text>
+    <rect x="50" y="100" width="280" height="240" class="bx"/><rect x="50" y="100" width="120" height="25" class="hd"/>
+    <text x="110" y="117" class="n">«device»</text><text x="190" y="150" class="n">Klientské zařízení (Mobil/PC)</text>
+    <rect x="70" y="170" width="240" height="150" fill="none" stroke="#334155" stroke-dasharray="4 4" stroke-width="1.5"/>
+    <text x="190" y="200" class="n">«artifact»</text><text x="190" y="220" class="d">PWA (Progressive Web App)</text>
+    <text x="190" y="240" class="d">Vykreslovací jádro (vč. Dark Mode)</text>
+
+    <ellipse cx="500" cy="220" rx="80" ry="50" class="bx" fill="#f1f5f9"/><text x="500" y="225" class="n">Internet</text>
+    <line x1="330" y1="220" x2="420" y2="220" stroke="#334155" stroke-width="1.5"/><text x="375" y="210" class="d">HTTPS / TLS</text>
+
+    <rect x="650" y="100" width="300" height="280" class="bx"/><rect x="650" y="100" width="120" height="25" class="hd"/>
+    <text x="710" y="117" class="n">«server»</text><text x="800" y="150" class="n">Aplikační Server Node.js (Docker)</text>
+    <rect x="680" y="180" width="240" height="80" class="bx"/><text x="800" y="210" class="n">REST API (Express)</text>
+    <rect x="680" y="280" width="240" height="80" class="bx"/><text x="800" y="310" class="n">Job Queue (Statistiky a Žebříčky)</text>
     
-    <rect x="50" y="100" width="240" height="200" class="box"/>
-    <rect x="50" y="100" width="100" height="20" class="hdr"/>
-    <text x="100" y="114" class="node">«device»</text>
-    <text x="170" y="150" class="node">Mobilní zařízení / PC</text>
-    <rect x="70" y="180" width="200" height="100" fill="none" stroke="#334155" stroke-dasharray="4 4" stroke-width="1.5"/>
-    <text x="170" y="210" class="node">«artifact»</text>
-    <text x="170" y="230" class="desc">HTML5 Web Application</text>
-    
-    <ellipse cx="450" cy="200" rx="70" ry="40" class="box" fill="#f1f5f9"/>
-    <text x="450" y="205" class="node">Internet</text>
-    <line x1="290" y1="200" x2="380" y2="200" stroke="#334155" stroke-width="1.5"/>
-    <text x="335" y="190" class="desc">HTTPS</text>
-    
-    <rect x="610" y="100" width="240" height="200" class="box"/>
-    <rect x="610" y="100" width="100" height="20" class="hdr"/>
-    <text x="660" y="114" class="node">«server»</text>
-    <text x="730" y="150" class="node">Aplikační Server Node.js</text>
-    <line x1="520" y1="200" x2="610" y2="200" stroke="#334155" stroke-width="1.5"/>
-    <text x="565" y="190" class="desc">REST API</text>
-    
-    <rect x="610" y="400" width="240" height="150" class="box"/>
-    <rect x="610" y="400" width="100" height="20" class="hdr"/>
-    <text x="660" y="414" class="node">«database»</text>
-    <text x="730" y="450" class="node">PostgreSQL Server</text>
-    <line x1="730" y1="300" x2="730" y2="400" stroke="#334155" stroke-width="1.5"/>
-    <text x="770" y="355" class="desc">TCP/IP</text>
+    <line x1="580" y1="220" x2="650" y2="220" stroke="#334155" stroke-width="1.5"/><text x="615" y="210" class="d">REST</text>
+
+    <rect x="650" y="460" width="300" height="150" class="bx"/><rect x="650" y="460" width="120" height="25" class="hd"/>
+    <text x="710" y="477" class="n">«database»</text><text x="800" y="510" class="n">PostgreSQL Server (ACID)</text>
+    <text x="800" y="540" class="d">Šifrovaná hesla uživatelů</text>
+    <line x1="800" y1="380" x2="800" y2="460" stroke="#334155" stroke-width="1.5"/><text x="840" y="425" class="d">TCP/IP</text>
+
+    <rect x="50" y="460" width="280" height="100" class="bx"/><rect x="50" y="460" width="120" height="25" class="hd"/>
+    <text x="110" y="477" class="n">«server»</text><text x="190" y="510" class="n">Email a Auth (@pslib.cz)</text>
+    <line x1="330" y1="510" x2="650" y2="510" stroke="#334155" stroke-dasharray="4 4" stroke-width="1.5"/>
+    <text x="490" y="500" class="d">OAuth2 Verifikace</text>
 </svg>
